@@ -1,6 +1,6 @@
 var login = angular.module('login', ['ui.router']);
 
-login.config(function($stateProvider, $urlRouterProvider,USER_ROLES) {
+login.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('loginPage');
     $stateProvider
 
@@ -12,9 +12,6 @@ login.config(function($stateProvider, $urlRouterProvider,USER_ROLES) {
         .state('mainPage', {
             url: '/mainPage',
             templateUrl: 'views/mainPage.html',
-            controller: 'mainPageController',
-            data:{
-              authorizedRoles:[USER_ROLES.admin, USER_ROLES.editor]
-            }
+            controller: 'mainPageController'
         });
 });
